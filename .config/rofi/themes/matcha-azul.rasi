@@ -1,0 +1,136 @@
+/******************************************************************************
+ * Matcha-dark-azul-transparent rofi theme
+ * User: Cortex
+ * Copyright: Cortex
+ ******************************************************************************/
+
+window {
+    background-color: #1b1d2480;
+    border: 0;
+    padding: 0;
+}
+
+mainbox {
+    background-color: #0000;
+    border: 0;
+    padding: 16;
+}
+
+inputbar {
+    spacing: 0;
+    padding: 1px;
+    background-color: #0000;
+    children: [ prompt, textbox-prompt-colon, entry ];
+}
+
+prompt {
+    background-color: #0000;
+    spacing: 0;
+    text-color: #afb4ba;
+}
+
+textbox-prompt-colon {
+    background-color: #0000;
+    expand: false;
+    str: "»";
+    margin: -1px 6px 0px 4px ;
+    text-color: #afb4ba;
+}
+
+entry {
+    spacing: 0;
+    background-color: #0000;
+    text-color: #bbc3c8;
+}
+
+message {
+    border: 1px 0px 0px;
+    border-color: #0004;
+    background-color: #0000;
+    padding: 2;
+}
+
+textbox {
+    text-color: #bbc3c8;
+    background-color: #0000;
+}
+
+listview {
+    background-color: #0000;
+    fixed-height: 0;
+    border: 1px 0px 0px;
+    border-color: #0004;
+    spacing: 1px;
+    padding: 2px 0px 0px;
+}
+
+mode-switcher {
+    border: 1px 0px 0px;
+    border-color: #0004;
+    background-color: #0000;
+}
+
+button {
+    text-color:  #bbc3c8;
+    padding: 2px;
+    background-color: #0000;
+}
+
+button.selected {
+    background-color: #0000;
+    text-color: #ffffff;
+}
+
+element {
+    border: 0;
+    padding: 2px;
+}
+
+element-icon {
+    size: 16px;
+}
+
+element.normal.normal {
+    background-color: #0000;
+    text-color: #bbc3c8;
+}
+
+element.alternate.normal {
+    background-color: #0000;
+    text-color: #bbc3c8;
+}
+
+element.selected.normal {
+    background-color: #3498db;
+    text-color: #ffffff;
+}
+
+element.normal.urgent {
+    background-color: #0000;
+    text-color: #fc4138;
+}
+
+element.alternate.urgent {
+    background-color: #0000;
+    text-color: #fc4138;
+}
+
+element.selected.urgent {
+    background-color: #fc4138;
+    text-color: #ffff;
+}
+
+element.normal.active {
+    background-color: #0000;
+    text-color: #ffffff;
+}
+
+element.selected.active {
+    background-color: #3498db;
+    text-color: #ffffff;
+}
+
+element.alternate.active {
+    background-color: #0000;
+    text-color: #ffffff;
+}

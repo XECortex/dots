@@ -1,0 +1,298 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+background = #801b1d24
+background-alt = #b31b1d24
+foreground = #bbc3c8
+foreground-alt = #73bbc3c8
+primary = #3498db
+secondary = #3498db
+alert = #fc4138
+white = #ffffff
+
+
+[bar/primary]
+monitor = ${env:MONITOR:DVI-D-0}
+width = 100%
+height = 22
+radius = 0.0
+fixed-center = true
+override-redirect = false
+enable-ipc = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 1
+border-size = 0
+
+padding-left = 2
+padding-right = 2
+module-margin-left = 0
+module-margin-right = 2
+
+font-0 = Roboto:size=10;2
+font-1 = Noto Sans Regular:size=10;1
+font-2 = unifont:size=10:fontformat=truetype:antialias=false;-4
+font-3 = font\-logos:size=10;1
+font-4 = Material Design Icons:size=10;2
+font-5 = Font Awesome 5 Brands:size=9;2
+font-6 = Font Awesome 5 Free Regular:size=9;2
+font-7 = Font Awesome 5 Free Solid:size=9;2
+font-8 = Twemoji:scale=8;2
+
+modules-left = artix i3 xwindow
+modules-center = date
+modules-right = weather filesystem pacman dunst microphone pulseaudio powermenu
+
+wm-restack = 
+
+; scroll-up = i3wm-wsnext
+; scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+[bar/secondary]
+monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 22
+radius = 0.0
+fixed-center = true
+override-redirect = false
+enable-ipc = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 1
+border-size = 0
+
+padding-left = 2
+padding-right = 2
+module-margin-left = 0
+module-margin-right = 2
+
+font-0 = Roboto:size=10;2
+font-1 = Noto Sans Regular:size=10;1
+font-2 = unifont:size=10:fontformat=truetype:antialias=false;-4
+font-3 = font\-logos:size=10;1
+font-4 = Material Design Icons:size=10;2
+font-5 = Font Awesome 5 Brands:size=9;2
+font-6 = Font Awesome 5 Free Regular:size=9;2
+font-7 = Font Awesome 5 Free Solid:size=9;2
+font-8 = Twemoji:scale=8;2
+
+modules-left = artix i3
+modules-center = spotify
+modules-right = powermenu
+
+wm-restack = 
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+[module/artix]
+type = custom/text
+
+content = 
+content-foreground = ${colors.primary}
+content-padding = 0
+
+click-left = rofi -show run
+
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = 󰋊 %free%
+
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %name%
+label-focused-background = ${colors.background-alt}
+label-focused-overline= ${colors.primary}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %name%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %name%
+label-visible-background = ${colors.background-alt}
+label-visible-overline = ${colors.primary}
+label-visible-padding = 2
+
+; urgent = Workspace with urgency hint set
+label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-foreground = ${colors.white}
+label-urgent-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "󰃭 %A, %d.%m.%Y • "
+date-alt = 
+
+time = %H:%M
+time-alt = 
+
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #00000000
+label = %date% %time%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <ramp-volume> <label-volume> <bar-volume>
+label-font = 0
+label-volume = %percentage%%
+label-volume-foreground = ${root.foreground}
+
+click-right = pavucontrol
+
+label-muted = 󰖁 muted
+label-muted-foreground = #666
+
+ramp-volume-0 = 󰕿
+ramp-volume-1 = 󰖀
+ramp-volume-2 = 󰕾
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = 
+bar-volume-indicator-font = 2
+bar-volume-fill = ▂
+bar-volume-fill-font = 2
+bar-volume-empty = ▂
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+
+[module/microphone]
+type = custom/script
+
+format = <label>
+
+exec = ~/.config/polybar/scripts/microphone.sh
+tail = true
+click-left = ~/.config/polybar/scripts/microphone.sh --toggle &
+click-right = pavucontrol
+
+
+[module/dunst]
+type = custom/ipc
+initial = 1
+format-hook-1-foreground = ${colors.foreground}
+format-hook-2-foreground = ${colors.foreground-alt}
+
+hook-0 = echo "%{A1:notify-send "DUNST_COMMAND_PAUSE" && polybar-msg hook dunst 2:}󰂚%{A}" &
+hook-1 = echo "%{A1:notify-send "DUNST_COMMAND_RESUME" && polybar-msg hook dunst 1:}󰂛%{A}" &
+
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.foreground}
+
+label-close = 
+label-close-foreground = ${colors.foreground}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = 
+menu-0-0-exec = loginctl poweroff
+menu-0-1 = 
+menu-0-1-exec = loginctl reboot
+menu-0-2 = 
+menu-0-2-exec = loginctl suspend
+menu-0-3 = 
+menu-0-3-exec = /usr/bin/dm-tool lock
+menu-0-4 = 
+menu-0-4-exec = i3-msg exit
+
+
+[settings]
+screenchange-reload = true
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:32:...%
+
+
+[module/pacman]
+type = custom/script
+exec = checkupdates | wc -l
+interval = 60
+label = %output%
+format-foreground = ${colors.foreground}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python ~/.config/polybar/scripts/spotify.py -t 32 -f '{song} - {artist}' -q
+format-prefix-foreground = #1db954
+
+
+[module/weather]
+type = custom/script
+interval = 300
+format = <label>
+exec = python ~/.config/polybar/scripts/weather.py

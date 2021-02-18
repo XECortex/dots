@@ -1,0 +1,10 @@
+configuration {
+    modi: "drun,window,run";
+    width: 25;
+	show-icons: true;
+	icon-theme: "Papirus-Dark";
+    font: "Roboto 11";
+	lines: 7;
+	sidebar-mode: true;
+    theme: "matcha-azul";
+}

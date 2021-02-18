@@ -1,0 +1,234 @@
+
+###* i3 config file (v4) *###
+
+# TODO SECTION
+# TODO: screenshooter
+# TODO: discord
+# TODO: fix ntfs
+# TODO: VSC
+# ! FIXME Polybar at startup
+
+###* Variables *###
+# Modifier key (Mod1 = Alt, Mod4 = Super)
+set $alt Mod1
+set $mod Mod4
+
+set $mode_gaps Gaps: (i)nner, (o)outer
+set $mode_gaps_outer Outer Gaps: +|-|0 (Shift to change globally)
+set $mode_gaps_inner Inner Gaps: +|-|0 (Shift to change globally)
+set $mode_border Border (0-5)
+
+set $bg_color #1b1d24
+set $inactive_bg_color #1b1d24
+set $text_color #bbc3c8
+set $inactive_text_color #bbc3c873
+set $urgent_bg_color #fc4138
+set $urgent_text_color #ffffff
+
+
+###* Keybindings *###
+# Open a new terminal
+bindsym $mod+Return             exec alacritty
+
+# Open the application runner
+bindsym $mod+d                  exec rofi -show drun
+bindsym $alt+Tab                exec rofi -show window
+
+# Close a window
+bindsym $mod+Shift+q            kill
+bindsym $alt+F4                 kill
+
+# Set split direction
+bindsym $mod+h                  split h
+bindsym $mod+v                  split v
+
+# Window focus
+bindsym $mod+Left               focus left
+bindsym $mod+Down               focus down
+bindsym $mod+Up                 focus up
+bindsym $mod+Right              focus right
+
+# Move focused window
+bindsym $mod+Shift+Left         move left
+bindsym $mod+Shift+Down         move down
+bindsym $mod+Shift+Up           move up
+bindsym $mod+Shift+Right        move right
+
+# Resize window
+bindsym $mod+r                  mode "Resize"
+
+# Enter fullscreen mode
+bindsym $mod+f                  fullscreen toggle
+
+# Change layout mode
+bindsym $mod+s                  layout stacking
+bindsym $mod+w                  layout tabbed
+bindsym $mod+e                  layout toggle split
+
+# Toggle floating window
+bindsym $mod+Shift+space        floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+space              focus mode_toggle
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier               $mod
+
+# i3 shortcuts
+bindsym $mod+Shift+c            reload
+bindsym $mod+Shift+r            restart
+bindsym $mod+Shift+l            exec /usr/bin/dm-tool lock
+bindsym $mod+Shift+x            exec loginctl suspend
+
+# Change gap size
+bindsym $mod+Shift+g            mode "$mode_gaps"
+
+# Change border width
+bindsym $mod+Shift+b            mode "$mode_border"
+
+# Media keys
+bindsym XF86AudioPlay           exec playerctl play-pause
+bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute           exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute        exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+
+###* Workspaces *##
+set $dt1                        " 1"
+set $dt2                        " 2"
+
+set $ws1                        "1: "
+set $ws2                        "2: 󰞷"
+set $ws3                        "3: 󰨞"
+set $ws4                        "4: 󰝰"
+set $ws5                        "5: 󰍹"
+set $ws6                        "6: 󰍹"
+set $ws7                        "7: 󰍹"
+set $ws8                        "8: 󰙯"
+set $ws9                        "9: 󰞷"
+set $ws10                       "10: "
+
+assign [class="Chromium"]       $ws1
+assign [class="Code"]           $ws3
+assign [class="Thunar"]         $ws4
+assign [class="discord"]        $ws8
+assign [class="Spotify"]        $ws10
+
+workspace $dt1                  output DVI-D-0
+workspace $dt2                  output HDMI-1
+
+workspace $ws1                  output DVI-D-0
+workspace $ws2                  output DVI-D-0
+workspace $ws3                  output DVI-D-0
+workspace $ws4                  output DVI-D-0
+workspace $ws8                  output HDMI-1
+workspace $ws9                  output HDMI-1
+workspace $ws10                 output HDMI-1
+
+workspace $ws10                 gaps outer 16
+
+
+###* Workspace Keybindings *###
+# Switch to workspace
+bindsym $mod+1                  workspace $ws1
+bindsym $mod+2                  workspace $ws2
+bindsym $mod+3                  workspace $ws3
+bindsym $mod+4                  workspace $ws4
+bindsym $mod+5                  workspace $ws5
+bindsym $mod+6                  workspace $ws6
+bindsym $mod+7                  workspace $ws7
+bindsym $mod+8                  workspace $ws8
+bindsym $mod+9                  workspace $ws9
+bindsym $mod+0                  workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1            move container to workspace $ws1
+bindsym $mod+Shift+2            move container to workspace $ws2
+bindsym $mod+Shift+3            move container to workspace $ws3
+bindsym $mod+Shift+4            move container to workspace $ws4
+bindsym $mod+Shift+5            move container to workspace $ws5
+bindsym $mod+Shift+6            move container to workspace $ws6
+bindsym $mod+Shift+7            move container to workspace $ws7
+bindsym $mod+Shift+8            move container to workspace $ws8
+bindsym $mod+Shift+9            move container to workspace $ws9
+bindsym $mod+Shift+0            move container to workspace $ws10
+
+
+###* Appearance *###
+# Font for window titles.
+font pango:Roboto 10
+
+# Disable window titlebars entirely
+for_window [class="^.*"] border pixel 0
+
+# Set gap size
+gaps inner 16
+gaps outer 0
+
+# Window colors
+client.focused          $bg_color               $bg_color               $text_color          $indicator_color
+client.unfocused        $inactive_bg_color      $inactive_bg_color      $inactive_text_color $indicator_color
+client.focused_inactive $inactive_bg_color      $inactive_bg_color      $inactive_text_color $indicator_color
+client.urgent           $urgent_bg_color        $urgent_bg_color        $urgent_text_color          $indicator_color
+
+
+###* Startup *###
+exec_always --no-startup-id nitrogen --restore &
+exec_always --no-startup-id picom -f --experimental-backends
+exec_always --no-startup-id sh ~/.config/polybar/launch.sh
+exec --no-startup-id pulseaudio --system=true
+exec --no-startup-id emote
+exec --no-startup-id nm-applet
+
+
+###* Modes *###
+# Resize window mode
+mode "Resize" {
+        bindsym Left            resize shrink width 10 px or 10 ppt
+        bindsym Down            resize grow height 10 px or 10 ppt
+        bindsym Up              resize shrink height 10 px or 10 ppt
+        bindsym Right           resize grow width 10 px or 10 ppt
+        bindsym Return          mode "default"
+        bindsym Escape          mode "default"
+}
+
+mode "$mode_gaps" {
+        bindsym o               mode "$mode_gaps_outer"
+        bindsym i               mode "$mode_gaps_inner"
+        bindsym Return          mode "default"
+        bindsym Escape          mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus            gaps inner current plus 4
+        bindsym minus           gaps inner current minus 4
+        bindsym 0               gaps inner current set 0
+        bindsym Shift+plus      gaps inner all plus 4
+        bindsym Shift+minus     gaps inner all minus 4
+        bindsym Shift+0         gaps inner all set 0
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_outer" {
+        bindsym plus            gaps outer current plus 4
+        bindsym minus           gaps outer current minus 4
+        bindsym 0               gaps outer current set 0
+        bindsym Shift+plus      gaps outer all plus 4
+        bindsym Shift+minus     gaps outer all minus 4
+        bindsym Shift+0         gaps outer all set 0
+        bindsym Return          mode "default"
+        bindsym Escape          mode "default"
+}
+
+mode "$mode_border" {
+        bindsym 0               border pixel 0
+        bindsym 1               border pixel 1
+        bindsym 2               border pixel 2
+        bindsym 3               border pixel 3
+        bindsym 4               border pixel 4
+        bindsym 5               border pixel 5
+        bindsym Return          mode "default"
+        bindsym Escape          mode "default"
+}
