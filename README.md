@@ -1,7 +1,7 @@
 # Welcome at `~`
 **...and in the chaos of my dotfiles!**\
 \
-[Rice](rice.png)
+![Rice](https://raw.githubusercontent.com/XECortex/dots/main/rice.jpg)
 
 ## Dependencies
   - Window Manager: `i3-gaps`
