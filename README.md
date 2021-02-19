@@ -1,7 +1,6 @@
 # Welcome at `~`
 **...and in the chaos of my dotfiles repository!**\
-\
-![Rice](https://raw.githubusercontent.com/XECortex/dots/main/rice.jpg)
+🡇 Scroll down for more information!
 
 ## Stuff I use
 ### General
@@ -24,3 +23,5 @@
   - [`Font Awesome`](https://fontawesome.com/)
   - [`Material Design Icons`](https://github.com/google/material-design-icons)
   - [`Font Logos`](https://github.com/lukas-w/font-logos)
+
+![Rice](https://raw.githubusercontent.com/XECortex/dots/main/rice.jpg)
