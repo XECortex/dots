@@ -1,4 +1,4 @@
-# Welcome at `~`
+# Welcome at `~`!
 **...and in the chaos of my dotfiles repository!**\
 🡇 Scroll down for more information!\
 \
@@ -25,3 +25,5 @@
   - [`Font Awesome`](https://fontawesome.com/)
   - [`Material Design Icons`](https://github.com/google/material-design-icons)
   - [`Font Logos`](https://github.com/lukas-w/font-logos)
+
+Thanks to @phish for the idea to make your `~` directory a Git repository!
