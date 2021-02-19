@@ -1,3 +1,4 @@
+import os
 import requests
 
 icons = {
@@ -21,53 +22,35 @@ icons = {
     '50n': '󰖑'
 }
 
-city = "2927043"
-key = "2fe690429c0888428a37dac3d340f494"
+# Please create a file called "weather.conf" in the polybar scripts directory
+# It should contain your city id and your API key from OpenWeatherMap
+# The format for this is "{city id}{api key}" (without the quotes and any spaces, everything in one line)
+# Example:
+#
+#   1234567abc3dsj63ncsh4msj39gf023z7hf9326
+#   ^      ^
+#   City   API Key
+#
+# Check out https://openweathermap.org/api for more informations about the OpenweatherMap API
+
+home = os.getenv('HOME')
+filepath = f"{home}/.config/polybar/scripts/weather.conf"
+
+if not os.path.isfile(filepath):
+    print(f"⚠ No weather config found. Check out \"scripts/weather.py:25\"")
+    exit()
+
+file = open(filepath, 'r')
+
+config = file.read()
+city = config[:7]
+key = config[7:]
 url = f"https://api.openweathermap.org/data/2.5/weather?id={city}&appid={key}"
+
+file.close()
 
 res = requests.get(url)
 icon = icons.get(res.json().get('weather')[0]['icon'], "󰼯")
 temp = round(res.json().get('main')['temp'] - 273.15, 1)
 
 print(icon, temp, "°C")
-
-# {
-#   'coord': {
-#       'lon': 9.1572,
-#       'lat': 48.8087
-#   },
-#   'weather': [{
-#       'id': 802,
-#       'main': 'Clouds',
-#       'description': 'scattered clouds',
-#       'icon': '03d'
-#   }],
-#   'base': 'stations',
-#   'main': {
-#       'temp': 280.61,
-#       'feels_like': 276.85,
-#       'temp_min': 279.82,
-#       'temp_max': 281.48,
-#       'pressure': 1021,
-#       'humidity': 81
-#   },
-#   'visibility': 10000,
-#   'wind': {
-#       'speed': 3.6,
-#       'deg': 200
-#   },
-#   'clouds': {
-#       'all': 40
-#   },
-#   'dt': 1613552596,
-#   'sys': {
-#       'type': 1,
-#       'id': 1274,
-#       'country': 'DE',
-#       'sunrise': 1613543283,
-#       'sunset': 1613580419},
-#       'timezone': 3600,
-#       'id': 2927043,
-#       'name': 'Stuttgart Feuerbach',
-#       'cod': 200
-#   }

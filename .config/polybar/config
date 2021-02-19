@@ -49,13 +49,13 @@ module-margin-right = 2
 
 font-0 = Roboto:size=10;2
 font-1 = Noto Sans Regular:size=10;1
-font-2 = unifont:size=10:fontformat=truetype:antialias=false;-4
-font-3 = font\-logos:size=10;1
-font-4 = Material Design Icons:size=10;2
-font-5 = Font Awesome 5 Brands:size=9;2
-font-6 = Font Awesome 5 Free Regular:size=9;2
-font-7 = Font Awesome 5 Free Solid:size=9;2
-font-8 = Twemoji:scale=8;2
+font-2 = Twemoji:scale=8;1
+font-3 = unifont:size=10:fontformat=truetype:antialias=false;-4
+font-4 = font\-logos:size=10;1
+font-5 = Material Design Icons:size=10;2
+font-6 = Font Awesome 5 Brands:size=9;2
+font-7 = Font Awesome 5 Free Regular:size=9;2
+font-8 = Font Awesome 5 Free Solid:size=9;2
 
 modules-left = artix i3 xwindow
 modules-center = date
@@ -92,13 +92,13 @@ module-margin-right = 2
 
 font-0 = Roboto:size=10;2
 font-1 = Noto Sans Regular:size=10;1
-font-2 = unifont:size=10:fontformat=truetype:antialias=false;-4
-font-3 = font\-logos:size=10;1
-font-4 = Material Design Icons:size=10;2
-font-5 = Font Awesome 5 Brands:size=9;2
-font-6 = Font Awesome 5 Free Regular:size=9;2
-font-7 = Font Awesome 5 Free Solid:size=9;2
-font-8 = Twemoji:scale=8;2
+font-2 = Twemoji:scale=8;2
+font-3 = unifont:size=10:fontformat=truetype:antialias=false;-4
+font-4 = font\-logos:size=10;1
+font-5 = Material Design Icons:size=10;2
+font-6 = Font Awesome 5 Brands:size=9;2
+font-7 = Font Awesome 5 Free Regular:size=9;2
+font-8 = Font Awesome 5 Free Solid:size=9;2
 
 modules-left = artix i3
 modules-center = spotify
@@ -117,7 +117,7 @@ content = 
 content-foreground = ${colors.primary}
 content-padding = 0
 
-click-left = rofi -show run
+click-left = rofi -show drun
 
 
 [module/filesystem]

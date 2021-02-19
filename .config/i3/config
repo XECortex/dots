@@ -6,7 +6,9 @@
 # TODO: discord
 # TODO: fix ntfs
 # TODO: VSC
-# ! FIXME Polybar at startup
+# ! readme wrong fork
+# ! Polybar at startup
+# ? cleanup everything
 
 ###* Variables *###
 # Modifier key (Mod1 = Alt, Mod4 = Super)
@@ -79,6 +81,9 @@ bindsym $mod+Shift+c            reload
 bindsym $mod+Shift+r            restart
 bindsym $mod+Shift+l            exec /usr/bin/dm-tool lock
 bindsym $mod+Shift+x            exec loginctl suspend
+bindsym Print                   exec xfce4-screenshooter -f -o chromium
+bindsym Ctrl+Print              exec xfce4-screenshooter -w -o chromium
+bindsym Ctrl+Shift+Print        exec xfce4-screenshooter -r -o chromium
 
 # Change gap size
 bindsym $mod+Shift+g            mode "$mode_gaps"
@@ -177,6 +182,7 @@ client.urgent           $urgent_bg_color        $urgent_bg_color        $urgent_
 exec_always --no-startup-id nitrogen --restore &
 exec_always --no-startup-id picom -f --experimental-backends
 exec_always --no-startup-id sh ~/.config/polybar/launch.sh
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id pulseaudio --system=true
 exec --no-startup-id emote
 exec --no-startup-id nm-applet
