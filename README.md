@@ -1,9 +1,7 @@
 # Welcome at `~`
-**...and in the chaos of my dotfiles!**\
-\
-![Rice](https://raw.githubusercontent.com/XECortex/dots/main/rice.jpg)
+## ...and in the chaos of my dotfiles repository!
 
-## Information
+## Stuff I use
 ### General
   - Window Manager: `i3-gaps`
   - Bar: `polybar`
@@ -24,3 +22,6 @@
   - [`Font Awesome`](https://fontawesome.com/)
   - [`Material Design Icons`](https://github.com/google/material-design-icons)
   - [`Font Logos`](https://github.com/lukas-w/font-logos)
+
+## Screenshot
+![Rice](https://raw.githubusercontent.com/XECortex/dots/main/rice.jpg)
