@@ -2,11 +2,9 @@
 ###* i3 config file (v4) *###
 
 # TODO SECTION
-# TODO: screenshooter
 # TODO: discord
 # TODO: fix ntfs
 # TODO: VSC
-# ! readme wrong fork
 # ! Polybar at startup
 # ? cleanup everything
 
@@ -81,9 +79,9 @@ bindsym $mod+Shift+c            reload
 bindsym $mod+Shift+r            restart
 bindsym $mod+Shift+l            exec /usr/bin/dm-tool lock
 bindsym $mod+Shift+x            exec loginctl suspend
-bindsym Print                   exec xfce4-screenshooter -f -o chromium
-bindsym Ctrl+Print              exec xfce4-screenshooter -w -o chromium
-bindsym Ctrl+Shift+Print        exec xfce4-screenshooter -r -o chromium
+bindsym Print                   exec flameshot full -c
+bindsym Ctrl+Print              exec flameshot screen -c
+bindsym Ctrl+Shift+Print        exec flameshot gui
 
 # Change gap size
 bindsym $mod+Shift+g            mode "$mode_gaps"
