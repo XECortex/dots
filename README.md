@@ -1,7 +1,7 @@
 # Welcome at `~`
 **...and in the chaos of my dotfiles!**\
 \
-I'll add more infos about this repository aswell as some screnshots soon!
+[Rice](rice.png)
 
 ## Dependencies
   - Window Manager: `i3-gaps`
