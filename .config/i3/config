@@ -1,11 +1,13 @@
 
-###* i3 config file (v4) *###
-
-# TODO SECTION
-# TODO: discord
-# TODO: fix ntfs
-# ! Polybar at startup
-# ? cleanup everything
+#
+#    ██╗  █████╗
+#    ██║      ██╗
+#    ██║   ████╔╝
+#    ██║      ██║
+#    ██║  █████╔╝
+#    ╚═╝  ╚════╝
+#   CONFIGURATION
+#
 
 ###* Variables *###
 # Modifier key (Mod1 = Alt, Mod4 = Super)
