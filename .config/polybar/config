@@ -102,7 +102,7 @@ font-8 = Font Awesome 5 Free Solid:size=9;2
 
 modules-left = artix i3
 modules-center = spotify
-modules-right = powermenu
+modules-right = info-hackspeed powermenu
 
 wm-restack = 
 
@@ -140,6 +140,11 @@ interval = 25
 mount-0 = /
 
 label-mounted = 󰋊 %free%
+
+[module/info-hackspeed]
+type = custom/script
+exec = ~/.config/polybar/scripts/info-hackspeed.sh
+tail = true
 
 
 [module/i3]
