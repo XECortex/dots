@@ -57,9 +57,9 @@ font-6 = Font Awesome 5 Brands:size=9;2
 font-7 = Font Awesome 5 Free Regular:size=9;2
 font-8 = Font Awesome 5 Free Solid:size=9;2
 
-modules-left = artix i3 xwindow
+modules-left = artix i3 pacman xwindow
 modules-center = date
-modules-right = weather filesystem pacman dunst microphone pulseaudio powermenu
+modules-right = weather filesystem kdeconnect dunst microphone pulseaudio powermenu
 
 wm-restack = 
 
@@ -108,6 +108,12 @@ wm-restack =
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+
+[module/kdeconnect]  
+type = custom/script  
+exec = ~/.config/polybar/scripts/kdeconnect.sh -d
+tail = true
 
 
 [module/artix]
@@ -199,13 +205,16 @@ ramp-volume-1 = 󰖀
 ramp-volume-2 = 󰕾
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-0 = #ff5555
+bar-volume-foreground-1 = #ff5555
+bar-volume-foreground-2 = #ff5555
+bar-volume-foreground-3 = #ff5555
+bar-volume-foreground-4 = #ff5555
 bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-6 = #f5a70a
+bar-volume-foreground-7 = #55aa55
+bar-volume-foreground-8 = #55aa55
+bar-volume-foreground-9 = #55aa55
 bar-volume-gradient = false
 bar-volume-indicator = 
 bar-volume-indicator-font = 2
@@ -230,11 +239,9 @@ click-right = pavucontrol
 [module/dunst]
 type = custom/ipc
 initial = 1
-format-hook-1-foreground = ${colors.foreground}
-format-hook-2-foreground = ${colors.foreground-alt}
 
 hook-0 = echo "%{A1:notify-send "DUNST_COMMAND_PAUSE" && polybar-msg hook dunst 2:}󰂚%{A}" &
-hook-1 = echo "%{A1:notify-send "DUNST_COMMAND_RESUME" && polybar-msg hook dunst 1:}󰂛%{A}" &
+hook-1 = echo "%{A1:notify-send "DUNST_COMMAND_RESUME" && polybar-msg hook dunst 1:}%{F#73bbc3c8}󰂛%{F-}%{A}" &
 
 
 [module/powermenu]
@@ -274,19 +281,17 @@ label = %title:0:32:...%
 
 [module/pacman]
 type = custom/script
-exec = checkupdates | wc -l
-interval = 60
+exec = ~/.config/polybar/scripts/updates.sh -d
+interval = 300
 label = %output%
 format-foreground = ${colors.foreground}
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
+format-overline = ${colors.alert}
 
 
 [module/spotify]
 type = custom/script
 interval = 1
 format-prefix = " "
-format = <label>
 exec = python ~/.config/polybar/scripts/spotify.py -t 32 -f '{song} - {artist}' -q
 format-prefix-foreground = #1db954
 
@@ -294,5 +299,4 @@ format-prefix-foreground = #1db954
 [module/weather]
 type = custom/script
 interval = 300
-format = <label>
 exec = python ~/.config/polybar/scripts/weather/weather.py

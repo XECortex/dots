@@ -14,4 +14,9 @@ res = requests.get(url)
 icon = icons.get(res.json().get('weather')[0]['icon'], "󰼯")
 temp = round(res.json().get('main')['temp'], 1)
 
-print(icon, temp, symbol)
+if res.json().get('weather')[0]['icon'].endswith('n'):
+    icon_color = color_night
+else:
+    icon_color = color_day
+
+print(f"%{{F{icon_color}}}" + icon + "%{F-}", temp, symbol)

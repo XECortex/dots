@@ -6,5 +6,6 @@ configuration {
     font: "Roboto 10";
 	lines: 7;
 	sidebar-mode: true;
-    theme: "matcha-azul";
 }
+
+@import "/home/cortex/.config/rofi/themes/matcha-azul.rasi"

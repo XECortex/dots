@@ -26,5 +26,5 @@
   - [`Material Design Icons`](https://github.com/google/material-design-icons)
   - [`Font Logos`](https://github.com/lukas-w/font-logos)
 
-Thanks to @phisch for the idea to make your `~` directory a Git repository!\
+Thanks to [@phisch](https://github.com/phisch/dotfiles) for the idea to make your `~` directory a Git repository!\
 Check out his dots for more informations about how it works!

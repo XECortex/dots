@@ -4,7 +4,7 @@ status() {
   MUTED=$(pacmd list-sources | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
 
   if [ "$MUTED" = "yes" ]; then
-    echo "󰍭"
+    echo "%{F#73bbc3c8}󰍭%{F-}"
   else
     echo "󰍬"
   fi

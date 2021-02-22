@@ -19,6 +19,7 @@ lang = "en"
 
 # Icons
 #
+# Change the weather icons and the colors for day- and nighttime
 icons = {
     '01d': '󰖙', # Clear sky
     '01n': '󰖔', #
@@ -39,3 +40,5 @@ icons = {
     '50d': '󰖑', # Fog
     '50n': '󰖑'  #
 }
+color_day = "#f5a70a"
+color_night = "#3267d1"
