@@ -59,7 +59,7 @@ font-8 = Font Awesome 5 Free Solid:size=9;2
 
 modules-left = artix i3 pacman xwindow
 modules-center = date
-modules-right = weather filesystem kdeconnect dunst microphone pulseaudio powermenu
+modules-right = weather eyestrain filesystem mail kdeconnect dunst microphone pulseaudio powermenu
 
 wm-restack = 
 
@@ -108,6 +108,13 @@ wm-restack =
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+
+[module/mail]
+type = custom/script
+interval = 60
+exec = python ~/.config/polybar/scripts/mail/mail.py
+click-left = thunderbird
 
 
 [module/kdeconnect]  
@@ -187,6 +194,14 @@ time-alt =
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #00000000
 label = %date% %time%
+
+
+[module/eyestrain]
+type = custom/script
+exec = ~/.config/polybar/scripts/eyestrain.sh
+interval = 60
+format-prefix = "󰀠 "
+
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -286,6 +301,7 @@ interval = 300
 label = %output%
 format-foreground = ${colors.foreground}
 format-overline = ${colors.alert}
+click-left = ~/.config/polybar/scripts/updates.sh -n &
 
 
 [module/spotify]
