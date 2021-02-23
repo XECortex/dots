@@ -14,7 +14,7 @@ check_updates() {
 
 install() {
     pkexec pacman -Syu --noconfirm
-    ~/.config/polybar/launch.sh
+    i3-msg restart
 }
 
 send_notification() {
