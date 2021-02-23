@@ -121,6 +121,7 @@ click-left = thunderbird
 type = custom/script  
 exec = ~/.config/polybar/scripts/kdeconnect.sh -d
 tail = true
+click-right = kdeconnect-settings
 
 
 [module/artix]
@@ -135,7 +136,7 @@ click-left = rofi -show drun
 
 [module/filesystem]
 type = internal/fs
-interval = 25
+interval = 30
 
 mount-0 = /
 
@@ -188,13 +189,13 @@ label-urgent-padding = 2
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 
 date = "󰃭 %A, %d.%m.%Y • "
-date-alt = 
+date-alt = "󱑎"
 
 time = %H:%M
-time-alt = 
+time-alt = %H:%M:%S
 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #00000000
@@ -218,7 +219,7 @@ label-volume-foreground = ${root.foreground}
 click-right = pavucontrol
 
 label-muted = 󰖁 muted
-label-muted-foreground = #666
+label-muted-foreground = ${colors.foreground-alt}
 
 ramp-volume-0 = 󰕿
 ramp-volume-1 = 󰖀

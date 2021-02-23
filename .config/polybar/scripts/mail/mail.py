@@ -24,3 +24,5 @@ if unread > 0 or not quiet:
         print(prefix, unread)
     else:
         print(prefix)
+else:
+    print('')

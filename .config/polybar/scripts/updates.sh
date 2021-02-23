@@ -12,12 +12,16 @@ check_updates() {
     fi
 }
 
+install() {
+    pkexec pacman -Syu --noconfirm
+    ~/.config/polybar/launch.sh
+}
+
 send_notification() {
     action=$(dunstify -A install,"Install Updates" "Updates Available" "Click to install" --icon=update-manager)
 
     case "$action" in
-        "install")
-            pkexec pacman -Syu --noconfirm ;;
+        "install") install ;;
     esac
 }
 

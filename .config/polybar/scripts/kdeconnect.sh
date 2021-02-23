@@ -101,7 +101,7 @@ get_icon () {
     elif [[ $1 = "-2" ]]
     then
         ICON="%{F$COLOR_NEWDEVICE}$icon%{F-}"
-    elif [[ $1 -lt 15 ]]
+    elif [[ $1 -le 15 ]]
     then
         ICON="%{F$COLOR_BATTERY_LOW}$icon%{F-}"
     else
