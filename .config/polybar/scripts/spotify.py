@@ -116,7 +116,7 @@ try:
 
     # Handle main label
 
-    artist = fix_string(metadata['xesam:artist'][0]) if metadata['xesam:artist'] else '<unknown>'
+    artist = fix_string(metadata['xesam:artist'][0]) if metadata['xesam:artist'][0] else '<unknown>'
     song = fix_string(metadata['xesam:title']) if metadata['xesam:title'] else '<unknown>'
     album = fix_string(metadata['xesam:album']) if metadata['xesam:album'] else '<unknown>'
 

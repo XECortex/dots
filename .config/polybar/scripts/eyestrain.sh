@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/env sh
 
 time=$((20 - $(date '+%-M') % 20))
 

@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/env sh
 
 check_updates() {
     updates=$(checkupdates | wc -l)
@@ -18,7 +18,7 @@ install() {
 }
 
 send_notification() {
-    action=$(dunstify -A install,"Install Updates" "Updates Available" "Click to install" --icon=update-manager)
+    action=$(dunstify -A install,"Install Updates" "Updates Available" "Click to install\n\n<i>$(checkupdates)</i>" --icon=update-manager)
 
     case "$action" in
         "install") install ;;
