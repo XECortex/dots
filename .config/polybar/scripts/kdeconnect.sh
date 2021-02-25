@@ -54,7 +54,8 @@ show_devices () {
 }
 
 show_menu () {
-    menu="$(rofi -sep "|" -dmenu -i -p "$DEV_NAME" -location $LOCATION -yoffset $YOFFSET -xoffset $XOFFSET -theme $THEME -width $WIDTH -hide-scrollbar -line-padding 4 -padding 20 -lines 5 <<< "󰁼 Battery: $DEV_BATTERY%|󰽁 Ping|󰍎 Find Device|󰩍 Send File|󰝰 Browse Files|󰥍 Unpair")"
+    BAT_ICON=$(get_battery_icon "$DEV_BATTERY")
+    menu="$(rofi -sep "|" -dmenu -i -p "$DEV_NAME" -location $LOCATION -yoffset $YOFFSET -xoffset $XOFFSET -theme $THEME -width $WIDTH -hide-scrollbar -line-padding 4 -padding 20 -lines 5 <<< "$BAT_ICON Battery: $DEV_BATTERY%|󰽁 Ping|󰍎 Find Device|󰩍 Send File|󰝰 Browse Files|󰥍 Unpair")"
                 case "$menu" in
                     *Ping) qdbus org.kde.kdeconnect "/modules/kdeconnect/devices/$DEV_ID/ping" org.kde.kdeconnect.device.ping.sendPing ;;
                     *'Find Device') qdbus org.kde.kdeconnect "/modules/kdeconnect/devices/$DEV_ID/findmyphone" org.kde.kdeconnect.device.findmyphone.ring ;;
@@ -84,6 +85,52 @@ show_pmenu2 () {
                 esac
 
 }
+
+#? 
+#? 
+#? 
+#? 󰁿
+#? 󰂀
+#? 󰂁
+#? 󰂂
+#? 󰁹
+
+get_battery_icon() {
+    if [[ $1 -le 10 ]]
+    then
+        echo "󰂎"
+    elif [[ $1 -le 20 ]]
+    then
+        echo "󰁺"
+    elif [[ $1 -le 30 ]]
+    then
+        echo "󰁻"
+    elif [[ $1 -le 40 ]]
+    then
+        echo "󰁼"
+    elif [[ $1 -le 50 ]]
+    then
+        echo "󰁽"
+    elif [[ $1 -le 60 ]]
+    then
+        echo "󰁾"
+    elif [[ $1 -le 70 ]]
+    then
+        echo "󰁿"
+    elif [[ $1 -le 80 ]]
+    then
+        echo "󰂀"
+    elif [[ $1 -le 90 ]]
+    then
+        echo "󰂁"
+    elif [[ $1 -lt 100 ]]
+    then
+        echo "󰂂"
+    else
+        echo "󰁹"
+    fi
+}
+
 get_icon () {
     if [ "$2" = "tablet" ]
     then
