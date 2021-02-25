@@ -83,6 +83,7 @@ bindsym $mod+Shift+x            exec loginctl suspend
 bindsym Print                   exec flameshot full -c
 bindsym Ctrl+Print              exec flameshot screen -c
 bindsym Ctrl+Shift+Print        exec flameshot gui
+bindsym --release Ctrl+$alt+x        exec xkill
 
 # Change gap size
 bindsym $mod+Shift+g            mode "$mode_gaps"
@@ -186,7 +187,7 @@ exec --no-startup-id pulseaudio --system=true &
 exec --no-startup-id emote &
 exec --no-startup-id nm-applet &
 exec --no-startup-id /usr/lib/kdeconnectd &
-exec --no-startup-id redshift -l 48.8:9.15 -t 6500:4000 &
+exec --no-startup-id redshift -l 48.8:9.15 -t 6500:4000
 
 
 ###* Modes *###

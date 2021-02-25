@@ -68,7 +68,7 @@ font-8 = Font Awesome 5 Free Solid:size=9;2
 
 modules-left = artix i3 pacman xwindow
 modules-center = date
-modules-right = weather eyestrain filesystem mail kdeconnect dunst microphone pulseaudio powermenu
+modules-right = weather eyestrain filesystem mail redshift kdeconnect dunst microphone pulseaudio powermenu
 
 wm-restack = 
 
@@ -274,6 +274,16 @@ hook-0 = echo "%{A1:notify-send "DUNST_COMMAND_PAUSE" && polybar-msg hook dunst 
 hook-1 = echo "%{A1:notify-send "DUNST_COMMAND_RESUME" && polybar-msg hook dunst 1:}%{F#73bbc3c8}󰂛%{F-}%{A}" &
 
 
+[module/redshift]
+type = custom/ipc
+
+initial = 1
+
+hook-0 = echo "%{A1: killall redshift & polybar-msg hook redshift 2:}%{F#bbc3c8}󰈈%{F-}%{A}" &
+hook-1 = echo "%{A1: redshift -l 48.8\:9.15 -t 6500\:4000 & polybar-msg hook redshift 1:}%{F#78aed2}󰈈%{F-}%{A}" &
+click-right = redshift -x &
+
+
 [module/powermenu]
 type = custom/menu
 
@@ -289,16 +299,14 @@ label-close-foreground = ${colors.foreground}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = 
+menu-0-0 = %{F#ff5555}%{F-}
 menu-0-0-exec = loginctl poweroff
-menu-0-1 = 
+menu-0-1 = %{F#f5a70a}%{F-}
 menu-0-1-exec = loginctl reboot
-menu-0-2 = 
+menu-0-2 = %{F#3498db}%{F-}
 menu-0-2-exec = loginctl suspend
-menu-0-3 = 
-menu-0-3-exec = /usr/bin/dm-tool lock
-menu-0-4 = 
-menu-0-4-exec = i3-msg exit
+menu-0-3 = %{F#55aa55}%{F-}
+menu-0-3-exec = i3-msg exit
 
 
 [settings]
