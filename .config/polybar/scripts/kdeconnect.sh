@@ -86,15 +86,6 @@ show_pmenu2 () {
 
 }
 
-#? 
-#? 
-#? 
-#? 󰁿
-#? 󰂀
-#? 󰂁
-#? 󰂂
-#? 󰁹
-
 get_battery_icon() {
     if [[ $1 -le 10 ]]
     then
