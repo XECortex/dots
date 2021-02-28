@@ -33,6 +33,7 @@ bindsym $mod+Return             exec alacritty
 
 # Open the application runner
 bindsym $mod+d                  exec rofi -show drun
+bindsym $mod+space              exec rofi -show drun
 bindsym $alt+Tab                exec rofi -show window
 
 # Close a window
@@ -70,7 +71,7 @@ bindsym $mod+e                  layout toggle split
 bindsym $mod+Shift+space        floating toggle
 
 # Change focus between tiling / floating windows
-bindsym $mod+space              focus mode_toggle
+# bindsym $mod+space              focus mode_toggle
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier               $mod
@@ -118,7 +119,7 @@ assign [class="Chromium"]       $ws1
 assign [class="Code"]           $ws3
 assign [class="Thunar"]         $ws4
 assign [class="discord"]        $ws8
-assign [class="Spotify"]        $ws10
+for_window [class="Spotify"] move --no-auto-back-and-forth container to workspace $ws10
 
 workspace $dt1                  output DVI-D-0
 workspace $dt2                  output HDMI-1
@@ -136,15 +137,15 @@ workspace $ws10                 gaps outer 16
 
 ###* Workspace Keybindings *###
 # Switch to workspace
-bindsym $mod+1                  workspace $ws1
-bindsym $mod+2                  workspace $ws2
-bindsym $mod+3                  workspace $ws3
-bindsym $mod+4                  workspace $ws4
-bindsym $mod+5                  workspace $ws5
-bindsym $mod+6                  workspace $ws6
-bindsym $mod+7                  workspace $ws7
-bindsym $mod+8                  workspace $ws8
-bindsym $mod+9                  workspace $ws9
+bindsym $mod+1                  workspace $ws1 
+bindsym $mod+2                  workspace $ws2 
+bindsym $mod+3                  workspace $ws3 
+bindsym $mod+4                  workspace $ws4 
+bindsym $mod+5                  workspace $ws5 
+bindsym $mod+6                  workspace $ws6 
+bindsym $mod+7                  workspace $ws7 
+bindsym $mod+8                  workspace $ws8 
+bindsym $mod+9                  workspace $ws9 
 bindsym $mod+0                  workspace $ws10
 
 # move focused container to workspace
@@ -179,6 +180,7 @@ client.urgent           $urgent_bg_color        $urgent_bg_color        $urgent_
 
 
 ###* Startup *###
+exec_always --no-startup-id flashfocus &
 exec_always --no-startup-id nitrogen --restore &
 exec_always --no-startup-id picom -f --experimental-backends &
 exec_always --no-startup-id sh ~/.config/polybar/launch.sh &
