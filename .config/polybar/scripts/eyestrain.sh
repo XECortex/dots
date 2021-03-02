@@ -3,7 +3,7 @@
 time=$((20 - $(date '+%-M') % 20))
 
 if [ $time -eq 20 ]; then
-    notify-send "Time for a short break" -i caffeine
+    notify-send "Time for a short break" "$(fortune)" -i caffeine
 fi
 
 echo "$time"m
