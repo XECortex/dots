@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-KEYBOARD_ID="8"
+KEYBOARD_ID="19"
 FORMAT="󰌓 %d wpm"
 INTERVAL=10
 CONDITION='($3 >= 10 && $3 <= 20) || ($3 >= 24 && $3 <= 34) || ($3 == 36) || ($3 >= 38 && $3 <= 48) || ($3 >= 52 && $3 <= 58)'
