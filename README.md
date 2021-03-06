@@ -9,7 +9,7 @@
   - Window Manager: `i3-gaps`
   - Bar: `polybar`
   - Program Launcher: `rofi`
-  - Compositor: `picom-ibhagwan`
+  - Compositor: `picom-jonaburg`
   
 ### Appearance:
   - `nitrogen` to set the wallpaper
