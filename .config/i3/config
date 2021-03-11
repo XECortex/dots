@@ -177,7 +177,7 @@ gaps outer 0
 client.focused          $bg_color               $bg_color               $text_color          $indicator_color
 client.unfocused        $inactive_bg_color      $inactive_bg_color      $inactive_text_color $indicator_color
 client.focused_inactive $inactive_bg_color      $inactive_bg_color      $inactive_text_color $indicator_color
-client.urgent           $urgent_bg_color        $urgent_bg_color        $urgent_text_color          $indicator_color
+client.urgent           $urgent_bg_color        $urgent_bg_color        $urgent_text_color   $indicator_color
 
 
 ###* Startup *###
@@ -186,6 +186,7 @@ exec_always --no-startup-id picom -f --experimental-backends &
 exec_always --no-startup-id sh ~/.config/polybar/launch.sh &
 exec_always --no-startup-id notify-send "Welcome" "Artix is now ready for use" -i distributor-logo-artix &
 exec --no-startup-id flashfocus &
+exec --no-startup-id xfce4-clipman &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id pipewire &
 exec --no-startup-id emote &

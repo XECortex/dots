@@ -5,7 +5,7 @@
  ******************************************************************************/
 
 window {
-    background-color: #1b1d2480;
+    background-color: #1b1d24a0;
     border: 0;
     padding: 0;
 }
