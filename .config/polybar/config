@@ -303,10 +303,8 @@ menu-0-0 = %{F#ff5555}%{F-}
 menu-0-0-exec = loginctl poweroff
 menu-0-1 = %{F#f5a70a}%{F-}
 menu-0-1-exec = loginctl reboot
-menu-0-2 = %{F#3498db}%{F-}
-menu-0-2-exec = loginctl suspend
-menu-0-3 = %{F#55aa55}%{F-}
-menu-0-3-exec = i3-msg exit
+menu-0-2 = %{F#338833}%{F-}
+menu-0-2-exec = i3-msg exit
 
 
 [settings]
