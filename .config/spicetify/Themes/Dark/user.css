@@ -12,6 +12,7 @@
 	overflow: hidden !important
 }
 
+.billboard-ad,
 .upgrade-button {
 	display: none !important;
 }
