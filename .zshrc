@@ -39,6 +39,7 @@ alias gitu='git add . && git commit && git push'
 alias bashtop='bpytop'
 alias clock='tty-clock -s -c -C 6 -f "%A, %d.%m.%Y" -d 100ms'
 alias fetch='neofetch --ascii_distro Artix_small'
+alias py='python'
 
 # Set terminal title
 echo -en "\033]0;Terminal - $USER@$(hostname)\a"
