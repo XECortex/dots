@@ -191,8 +191,8 @@ exec --no-startup-id pipewire
 exec --no-startup-id emote
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/kdeconnectd
-exec --no-startup-id redshift -l 48.8:9.15 -t 6500:4000
 exec --no-startup-id xfce4-clipman
+exec --no-startup-id redshift -l 48.8:9.15 -t 6500:4000
 
 
 ###* Modes *###
