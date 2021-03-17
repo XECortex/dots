@@ -13,6 +13,9 @@
 }
 
 .billboard-ad,
+#view-billboard-ad,
+.billboard-ad .footer,
+.billboard-ad .billboard-wrapper,
 .upgrade-button {
 	display: none !important;
 }

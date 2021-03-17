@@ -120,6 +120,7 @@ assign [class="Google-chrome"]  $ws1
 assign [class="Code"]           $ws3
 assign [class="Thunar"]         $ws4
 assign [class="discord"]        $ws8
+for_window [class="Main.py"] floating enable
 for_window [class="Spotify"] move --no-auto-back-and-forth container to workspace $ws10
 
 workspace $dt1                  output DVI-D-0

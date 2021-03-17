@@ -188,8 +188,8 @@ label-visible-padding = 2
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
-label-urgent-background = ${colors.alert}
-label-urgent-foreground = ${colors.white}
+label-urgent-overline = ${colors.alert}
+label-urgent-foreground = ${colors.foreground}
 label-urgent-padding = 2
 
 ; Separator in between workspaces

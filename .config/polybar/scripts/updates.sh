@@ -13,7 +13,7 @@ check_updates() {
 }
 
 install() {
-    pkexec pacman -Syu --noconfirm
+    pkexec yay -Syu --noconfirm
     i3-msg restart
 }
 

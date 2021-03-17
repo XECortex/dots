@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 status() {
-  MUTED=$(pacmd list-sources | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
+  MUTED=$(pactl list sources | awk '/Mute/ {print $2; exit}')
 
   if [ "$MUTED" = "yes" ]; then
     echo "%{F#73bbc3c8}󰍭%{F-}"
@@ -21,13 +21,12 @@ listen() {
 }
 
 toggle() {
-  MUTED=$(pacmd list-sources | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
-  DEFAULT_SOURCE=$(pacmd list-sources | awk '/\*/,EOF {print $3; exit}')
+  MUTED=$(pactl list sources | awk '/Mute/ {print $2; exit}')
 
   if [ "$MUTED" = "yes" ]; then
-      pacmd set-source-mute "$DEFAULT_SOURCE" 0
+      pactl set-source-mute @DEFAULT_SOURCE@ 0
   else
-      pacmd set-source-mute "$DEFAULT_SOURCE" 1
+      pactl set-source-mute @DEFAULT_SOURCE@ 1
   fi
 }
 
