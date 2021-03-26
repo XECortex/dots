@@ -89,7 +89,7 @@ show_pmenu2 () {
 get_battery_icon() {
     if [[ $1 -le 10 ]]
     then
-        echo "󰂎"
+        echo "󰁺"
     elif [[ $1 -le 20 ]]
     then
         echo "󰁺"
@@ -101,22 +101,22 @@ get_battery_icon() {
         echo "󰁼"
     elif [[ $1 -le 50 ]]
     then
-        echo "󰁽"
+        echo "󰁾"
     elif [[ $1 -le 60 ]]
     then
         echo "󰁾"
     elif [[ $1 -le 70 ]]
     then
-        echo "󰁿"
+        echo "󰁾"
     elif [[ $1 -le 80 ]]
     then
-        echo "󰂀"
+        echo "󰂂"
     elif [[ $1 -le 90 ]]
     then
-        echo "󰂁"
+        echo "󰂂"
     elif [[ $1 -lt 100 ]]
     then
-        echo "󰂂"
+        echo "󰁹"
     else
         echo "󰁹"
     fi

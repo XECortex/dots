@@ -171,6 +171,7 @@ font pango:Roboto 10
 for_window [class="^.*"] border pixel 0
 
 # Set gap size
+smart_gaps on
 gaps inner 16
 gaps outer 0
 
@@ -188,7 +189,10 @@ exec_always --no-startup-id sh ~/.config/polybar/launch.sh
 exec_always --no-startup-id notify-send "Welcome" "Artix is now ready for use" -i distributor-logo-artix
 exec --no-startup-id flashfocus
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id blueman-tray
 exec --no-startup-id pipewire
+exec --no-startup-id pipewire-media-session
+exec --no-startup-id pipewire-pulse
 exec --no-startup-id emote
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/kdeconnectd
