@@ -1,0 +1,106 @@
+{
+    "better-comments.highlightPlainText": true,
+    "better-comments.tags": [
+        {
+            "tag": "!",
+            "color": "#FF2D00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "?",
+            "color": "#3498DB",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "todo",
+            "color": "#FF8C00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "fixme",
+            "color": "#FF68AA",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "wip",
+            "color": "#68FFAA",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "*",
+            "color": "#98C379",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        }
+    ],
+    "C_Cpp.updateChannel": "Insiders",
+    "editor.fontFamily": "'Fira Code', 'Material Design Icons', 'Font Awesome 5 Brands', 'Font Awesome 5 Free Solid', 'Font Awesome 5 Free Regular'",
+    "editor.inlineHints.fontFamily": "'Fira Code', 'Material Design Icons', 'Font Awesome 5 Brands', 'Font Awesome 5 Free Solid', 'Font Awesome 5 Free Regular'",
+    "python.showStartPage": false,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.editor.decorations.colors": true,
+    "terminal.integrated.drawBoldTextInBrightColors": false,
+    "editor.fontLigatures": true,
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "editor.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
+    "editor.cursorSmoothCaretAnimation": true,
+    "liveshare.authenticationProvider": "GitHub",
+    "csharp.suppressDotnetInstallWarning": true,
+    "window.autoDetectColorScheme": true,
+    "color-highlight.markerType": "underline",
+    "color-highlight.markRuler": false,
+    "color-highlight.languages": [
+        "*"
+    ],
+    "workbench.colorTheme": "GitHub Dark",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.languageServer": "Microsoft",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "jupyter.interactiveWindowMode": "perFile",
+    "liveshare.presence": true,
+    "kite.showWelcomeNotificationOnStartup": false,
+    "workbench.editor.decorations.badges": true,
+    "editor.fontSize": 12,
+    "editor.cursorStyle": "line-thin",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.insertSpaces": false,
+    "files.exclude": {
+        "**/.git": false
+    },
+    "editor.linkedEditing": true,
+    "editor.mouseWheelZoom": true,
+    "editor.renderControlCharacters": true,
+    "editor.find.autoFindInSelection": "multiline",
+}
