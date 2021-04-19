@@ -78,7 +78,6 @@
         "*"
     ],
     "workbench.iconTheme": "material-icon-theme",
-    "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.languageServer": "Microsoft",
     "workbench.editorAssociations": [
@@ -91,24 +90,19 @@
     "liveshare.presence": true,
     "kite.showWelcomeNotificationOnStartup": false,
     "workbench.editor.decorations.badges": true,
-    "editor.fontSize": 12,
+    "editor.fontSize": 13,
     "editor.cursorStyle": "line-thin",
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.insertSpaces": false,
+	"editor.multiCursorModifier": "ctrlCmd",
     "files.exclude": {
         "**/.git": false
     },
-    "editor.linkedEditing": true,
     "editor.mouseWheelZoom": true,
     "editor.renderControlCharacters": true,
     "editor.find.autoFindInSelection": "multiline",
-    "editor.formatOnPaste": true,
     "files.enableTrash": false,
-    "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "workbench.preferredDarkColorTheme": "GitHub Dark",
     "workbench.preferredLightColorTheme": "GitHub Light",
-    "workbench.colorTheme": "GitHub Dark",
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.limit.enabled": true,
     "workbench.editor.limit.value": 16,
@@ -122,4 +116,8 @@
     "terminal.external.linuxExec": "alacritty",
     "terminal.explorerKind": "external",
     "update.mode": "none",
+    "editor.cursorBlinking": "smooth",
+    "workbench.colorTheme": "GitHub Dark Dimmed",
+    "discord.enabled": false,
+    "editor.linkedEditing": true,
 }

@@ -141,15 +141,15 @@ workspace $ws10                 gaps outer 16
 
 ###* Workspace Keybindings *###
 # Switch to workspace
-bindsym $mod+1                  workspace $ws1 
-bindsym $mod+2                  workspace $ws2 
-bindsym $mod+3                  workspace $ws3 
-bindsym $mod+4                  workspace $ws4 
-bindsym $mod+5                  workspace $ws5 
-bindsym $mod+6                  workspace $ws6 
-bindsym $mod+7                  workspace $ws7 
-bindsym $mod+8                  workspace $ws8 
-bindsym $mod+9                  workspace $ws9 
+bindsym $mod+1                  workspace $ws1
+bindsym $mod+2                  workspace $ws2
+bindsym $mod+3                  workspace $ws3
+bindsym $mod+4                  workspace $ws4
+bindsym $mod+5                  workspace $ws5
+bindsym $mod+6                  workspace $ws6
+bindsym $mod+7                  workspace $ws7
+bindsym $mod+8                  workspace $ws8
+bindsym $mod+9                  workspace $ws9
 bindsym $mod+0                  workspace $ws10
 
 # move focused container to workspace
@@ -189,7 +189,7 @@ exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom -f --experimental-backends
 exec_always --no-startup-id sh ~/.config/polybar/launch.sh
 exec_always --no-startup-id notify-send "Welcome" "Artix is now ready for use" -i distributor-logo-artix
-exec --no-startup-id flashfocus
+exec --no-startup-id /home/cortex/Documents/spotifytools/main.py -t
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id blueman-tray
 exec --no-startup-id pipewire
