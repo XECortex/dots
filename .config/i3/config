@@ -174,7 +174,7 @@ for_window [class="^.*"] border pixel 0
 
 # Set gap size
 smart_gaps on
-gaps inner 16
+gaps inner 6
 gaps outer 0
 
 # Window colors

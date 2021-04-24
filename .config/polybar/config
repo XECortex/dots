@@ -30,7 +30,7 @@ white = #ffffff
 [bar/primary]
 monitor = ${env:MONITOR:DVI-D-0}
 width = 100%
-height = 24
+height = 26
 radius = 0.0
 fixed-center = true
 override-redirect = false
@@ -51,10 +51,10 @@ foreground = ${colors.foreground}
 line-size = 1
 border-size = 0
 
-padding-left = 2
-padding-right = 1
+padding-left = 4
+padding-right = 2
 module-margin-left = 0
-module-margin-right = 2
+module-margin-right = 4
 
 font-0 = Roboto:size=10;2
 font-1 = Noto Sans Regular:size=10;1
@@ -70,7 +70,7 @@ modules-left = artix i3 pacman xwindow
 modules-center = date
 modules-right = weather eyestrain filesystem mail redshift kdeconnect dunst microphone pulseaudio powermenu
 
-wm-restack = 
+wm-restack =
 
 ; scroll-up = i3wm-wsnext
 ; scroll-down = i3wm-wsprev
@@ -82,7 +82,7 @@ cursor-scroll = ns-resize
 [bar/secondary]
 monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 24
+height = 26
 radius = 0.0
 fixed-center = true
 override-redirect = false
@@ -94,10 +94,10 @@ foreground = ${colors.foreground}
 line-size = 1
 border-size = 0
 
-padding-left = 2
+padding-left = 4
 padding-right = 2
 module-margin-left = 0
-module-margin-right = 2
+module-margin-right = 4
 
 font-0 = Roboto:size=10;2
 font-1 = Noto Sans Regular:size=10;1
@@ -113,7 +113,7 @@ modules-left = artix i3
 modules-center = spotify
 modules-right = info-hackspeed powermenu
 
-wm-restack = 
+wm-restack =
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -126,8 +126,8 @@ exec = python ~/.config/polybar/scripts/mail/mail.py
 click-left = thunderbird
 
 
-[module/kdeconnect]  
-type = custom/script  
+[module/kdeconnect]
+type = custom/script
 exec = ~/.config/polybar/scripts/kdeconnect.sh -d
 tail = true
 click-right = kdeconnect-settings
@@ -246,7 +246,7 @@ bar-volume-foreground-7 = #55aa55
 bar-volume-foreground-8 = #55aa55
 bar-volume-foreground-9 = #55aa55
 bar-volume-gradient = false
-bar-volume-indicator = 
+bar-volume-indicator =
 bar-volume-indicator-font = 2
 bar-volume-fill = ▂
 bar-volume-fill-font = 2
